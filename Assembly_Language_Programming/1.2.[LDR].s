@@ -11,6 +11,10 @@ list:
 //list = [4,5,-9,1,0,2,-3]
 //list[R0]
 
+ldmib r0, {r4-r6}            /* words[4] -> r4 = 0x04; words[5] -> r5 = 0x05; words[6] -> r6 = 0x06 */
+stmib r1, {r4-r6}            /* r4 -> array_buff[1] = 0x04; r5 -> array_buff[2] = 0x05; r6 -> array_buff[3] = 0x06 */
+
+
 /*
     1. `LDR`: The `LDR` instruction is used to load a value from memory into a register. 
 	For example, `ldr r0, [r1]` loads the value at the memory address contained in `r1` into `r0`¹. 
